@@ -3,10 +3,13 @@
 {% block title %}Student{% endblock %}
 
 {% block body %}
-    <h1>Student</h1>
+    <div class="container">
+        <div class="container text-center">
+            <h1>Student</h1>
+        </div>
 
-    <table class="table">
-        <tbody>
+        <table class="table">
+            <tbody>
             <tr>
                 <th>Id</th>
                 <td>{{ student.id }}</td>
@@ -23,12 +26,15 @@
                 <th>NumEtud</th>
                 <td>{{ student.numEtud }}</td>
             </tr>
-        </tbody>
-    </table>
+            </tbody>
+        </table>
 
-    <a href="{{ path('student_index') }}">back to list</a>
+        <div class="container text-center">
+            <a href="{{ path('student_index') }}" class="btn btn-danger">back to list</a>
+            <a href="{{ path('student_edit', {'id': student.id}) }}" class="btn btn-primary">edit</a>
+        </div>
 
-    <a href="{{ path('student_edit', {'id': student.id}) }}">edit</a>
+        {{ include('student/_delete_form.html.twig') }}
 
-    {{ include('student/_delete_form.html.twig') }}
+    </div>
 {% endblock %}
