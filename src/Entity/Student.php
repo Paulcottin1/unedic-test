@@ -34,6 +34,11 @@ class Student
      */
     private $numEtud;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Departement::class, inversedBy="students")
+     */
+    private $departement;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -71,6 +76,18 @@ class Student
     public function setNumEtud(int $numEtud): self
     {
         $this->numEtud = $numEtud;
+
+        return $this;
+    }
+
+    public function getDepartement(): ?Departement
+    {
+        return $this->departement;
+    }
+
+    public function setDepartement(?Departement $departement): self
+    {
+        $this->departement = $departement;
 
         return $this;
     }
