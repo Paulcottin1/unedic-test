@@ -1,6 +1,6 @@
 # API Symfony Unedic Tests
 
-## Prerequisites (Development environement)
+## Prerequisites (Development environement) (You can use DockerFile)
     - Linux
     - Php 7.3
     - MySQL 5.7
@@ -27,10 +27,10 @@ Create the database
 php bin/console doctrine:database:create
 ```
 
-Create the different tables with the migration
+Create the different tables
 
 ```
-php bin/console doctrine:migrations:migrate
+php bin/console doctrine:schema:update -f
 ```
 
 Install fixtures

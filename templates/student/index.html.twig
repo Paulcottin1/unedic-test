@@ -4,8 +4,10 @@
 
 {% block body %}
     <div class="container">
-        <h1 class="text-center">Student index</h1>
+        <div>
+            <h1 class="text-center">Student index</h1>
 
+        </div>
         <table class="table">
             <thead>
             <tr>
@@ -35,10 +37,8 @@
             {% endfor %}
             </tbody>
         </table>
-
         <div class="container text-center">
             <a href="{{ path('student_new') }}" class="btn btn-primary">Create new</a>
         </div>
-
     </div>
 {% endblock %}

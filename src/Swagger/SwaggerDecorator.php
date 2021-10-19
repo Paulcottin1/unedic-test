@@ -77,6 +77,33 @@ final class SwaggerDecorator implements NormalizerInterface
                         ],
                     ],
                 ],
+                '/departments/get-students-by-department-id/{id}' => [
+                    'get' => [
+                        'tags' => ['Department'],
+                        'operationId' => 'postCredentialsItem',
+                        'summary' => 'Get students by department id',
+                        'requestBody' => [
+                            'description' => 'Get students',
+
+
+                        ],
+                        'responses' => [
+                            Response::HTTP_OK => [
+                                'description' => 'Get Students',
+                                'content' => [
+                                    'application/json' => [
+                                        'schema' => [
+                                            '$ref' => '#/components/schemas/Student',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            Response::HTTP_NOT_FOUND => [
+                                'description' => 'No students found',
+                            ],
+                        ],
+                    ],
+                ],
             ],
         ];
 
