@@ -2,6 +2,8 @@
 
 namespace App\DataFixtures;
 
+use App\Entity\Department;
+use App\Entity\Student;
 use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
@@ -35,6 +37,34 @@ class AppFixtures extends Fixture
             ->setPassword('admin');
 
         $manager->persist($user);
+
+        $department = new Department();
+
+        $department
+            ->setName('Loiret')
+            ->setCapacity(10);
+
+        $manager->persist($department);
+
+        $student = new Student();
+
+        $student
+            ->setDepartment($department)
+            ->setFirstName('Student 1')
+            ->setLastName('LastName')
+            ->setNumEtud(10);
+
+        $manager->persist($student);
+
+        $student2 = new Student();
+
+        $student2
+            ->setDepartment($department)
+            ->setFirstName('Student 2')
+            ->setLastName('LastName')
+            ->setNumEtud(10);
+
+        $manager->persist($student2);
 
         $manager->flush();
     }
