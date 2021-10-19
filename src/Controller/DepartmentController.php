@@ -11,7 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Serializer\SerializerInterface;
 
 /**
- * @Route("/department")
+ * @Route("/departments")
  */
 class DepartmentController extends AbstractController
 {

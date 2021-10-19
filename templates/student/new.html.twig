@@ -7,14 +7,11 @@
         <div class="">
             <h1 class="text-center">Create new Student</h1>
         </div>
-
         <div class="container text-center">
             {{ include('student/_form.html.twig') }}
         </div>
-
         <div class="container text-center margin-top" style="margin-top: 10px;">
             <a href="{{ path('student_index') }}" class="btn btn-danger margin-top">back to list</a>
         </div>
-
     </div>
 {% endblock %}
