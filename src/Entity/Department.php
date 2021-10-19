@@ -3,16 +3,16 @@
 namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
-use App\Repository\DepartementRepository;
+use App\Repository\DepartmentRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ApiResource()
- * @ORM\Entity(repositoryClass=DepartementRepository::class)
+ * @ORM\Entity(repositoryClass=DepartmentRepository::class)
  */
-class Departement
+class Department
 {
     /**
      * @ORM\Id
@@ -32,7 +32,7 @@ class Departement
     private $capacity;
 
     /**
-     * @ORM\OneToMany(targetEntity=Student::class, mappedBy="departement")
+     * @ORM\OneToMany(targetEntity=Student::class, mappedBy="department")
      */
     private $students;
 
@@ -82,7 +82,7 @@ class Departement
     {
         if (!$this->students->contains($student)) {
             $this->students[] = $student;
-            $student->setDepartement($this);
+            $student->setDepartment($this);
         }
 
         return $this;
@@ -92,8 +92,8 @@ class Departement
     {
         if ($this->students->removeElement($student)) {
             // set the owning side to null (unless already changed)
-            if ($student->getDepartement() === $this) {
-                $student->setDepartement(null);
+            if ($student->getDepartment() === $this) {
+                $student->setDepartment(null);
             }
         }
 

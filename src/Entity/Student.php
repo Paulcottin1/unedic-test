@@ -35,9 +35,9 @@ class Student
     private $numEtud;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Departement::class, inversedBy="students")
+     * @ORM\ManyToOne(targetEntity=Department::class, inversedBy="students")
      */
-    private $departement;
+    private $department;
 
     public function getId(): ?int
     {
@@ -80,14 +80,14 @@ class Student
         return $this;
     }
 
-    public function getDepartement(): ?Departement
+    public function getDepartment(): ?Department
     {
-        return $this->departement;
+        return $this->department;
     }
 
-    public function setDepartement(?Departement $departement): self
+    public function setDepartment(?Department $department): self
     {
-        $this->departement = $departement;
+        $this->department = $department;
 
         return $this;
     }
